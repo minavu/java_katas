@@ -30,7 +30,7 @@ public class Kata {
     if (isLeap)
       System.out.println("Bingo");
     else
-      System.out.println("Opps");
+      System.out.println("Oops");
 
   }
 }

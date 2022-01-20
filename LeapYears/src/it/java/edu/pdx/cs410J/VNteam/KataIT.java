@@ -22,5 +22,28 @@ class KataIT extends InvokeMainTestCase {
     assertThat(result.getTextWrittenToStandardError(), containsString("Missing command line arguments"));
   }
 
+  @Test
+  void testMainWithArgumentDivideBy400() {
+    InvokeMainTestCase.MainMethodResult result = invokeMain(Kata.class, "2000");
+    assertThat(result.getTextWrittenToStandardOut(), containsString("Bingo"));
+  }
+
+  @Test
+  void testMainWithArgumentIsNotLeapYear() {
+    InvokeMainTestCase.MainMethodResult result = invokeMain(Kata.class, "1991");
+    assertThat(result.getTextWrittenToStandardOut(), containsString("Oops"));
+  }
+
+  @Test
+  void testMainWithArgumentDivideBy4Not100() {
+    InvokeMainTestCase.MainMethodResult result = invokeMain(Kata.class, "20");
+    assertThat(result.getTextWrittenToStandardOut(), containsString("Bingo"));
+  }
+
+  @Test
+  void testMainWithArgumentDivideBy100Not400() {
+    InvokeMainTestCase.MainMethodResult result = invokeMain(Kata.class, "2200");
+    assertThat(result.getTextWrittenToStandardOut(), containsString("Oops"));
+  }
 
 }
