@@ -12,7 +12,7 @@ public class Kata {
   public static void main(String[] args) {
     char[] alphabet = "abcdefghijklmnopqrstuvwxyz".toUpperCase().toCharArray();
 
-    char input = 'F';
+    char input = 'M';
 
     int index = 0;
     for (char character: alphabet) {
@@ -59,9 +59,6 @@ public class Kata {
         break;
     }
 
-    System.out.println("index: " + index);
-
-    System.err.println("Missing command line arguments");
     System.exit(1);
   }
 }
