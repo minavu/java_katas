@@ -17,17 +17,24 @@ public class Kata {
          for (int j = 0; j < i; ++j) {
              System.out.print(" ");
          }
-         System.out.print(currentLetter);
-
-         if (currentLetter != 'A') {
-             int distance = 2 * (int) currentLetter + 1;
-
-             for (int k = 0; k <= distance; ++k) {
-
-             }
+         if (currentLetter == 'A') {
+             System.out.println(currentLetter);
+         } else {
+             System.out.print(currentLetter);
          }
 
+         if (currentLetter != 'A') {
+             int distance = 2 * (int) ((int)currentLetter - (int)'A') - 1;
+
+             for (int k = 0; k < distance; ++k) {
+                 System.out.print(" ");
+             }
+             System.out.println(currentLetter);
+         }
+         ++currentLetter;
      }
+     --currentLetter;
+
   }
                                                                                     
 
